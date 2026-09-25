@@ -12,12 +12,11 @@ It is a USB Audio and MIDI Class compliant device and works with Linux, macOS, a
 :::
 ## Audio interface
 
-
 Configure Mixxx’s main output for channels 1-2 and Headphones output for Channels 3-4.
 
 The microphone input on this controller is not available to the computer through the controller’s audio interface.
 It is mixed with the main output in hardware, so this controller’s audio interface is not suitable for broadcasting or recording the inputs.
-If you want to use the controller for broadcasting or recording, a separate {ref}`audio interface <hardware-audio-interfaces>` with a microphone input is suggested.
+To use the controller for broadcasting or recording, a separate {ref}`audio interface <hardware-audio-interfaces>` with a microphone input is suggested.
 
 ## Configuration Options
 
@@ -42,11 +41,35 @@ You can set configuration options in the Mixxx controller preferences.
 
 ### Auto Loops Options
 
+-  **Control beat jump with Auto Loop second row pads** When enabled, the bottom row of transport pads (CUE, START, BACK, FWD) will control beat jump (back, dec, inc, fwd) when the pad mode is set to 'Auto Loop'. The number of beats jumped when holding SHIFT can be configured here for each pad.
 
+### Fader Cuts Options
 
--  **Control stems with Fader Cuts pads** When enabled, the 'Fader Cuts' pad mode is replaced with a mode to control Stems.
+-  **Use transport pads as fadercuts in Fader Cuts mode** When enabled, transport pads (CUE, START, BACK, FWD) will function as fadercuts 5-8 when the pad mode is set to 'Fader Cuts'.
+
+-  **Pad 1-8 patterns** Specify which fadercut pattern to use for each performance and transport pad in Fader Cuts mode.
+
+### Scratching Options
 
 -  **Exit slip mode after scratching** When enabled, then when the slip mode is on and you start scratching, the slip mode exits after you finish the scratching so that the track can continue playing from the position where it originally should have been.
+
+-  **Use transport pads as scratch patterns in Scratch Banks mode** When enabled, transport pads (CUE, START, BACK, FWD) will function as scratch patterns 5-8 when the pad mode is set to 'Scratch Banks'.
+
+-  **Scratch speed (steps per beat)** Number of timer steps per beat for scratch patterns. 32 = 2 cycles/beat, 64 = 4 cycles/beat (default), 128 = 8 cycles/beat.
+
+-  **Pad 1-8 scratch patterns** Specify which scratch pattern to use for each performance and transport pad in Fader Cuts mode.
+
+### Stem Control Options
+
+-  **Control stems with Slicer pads** When enabled, the 'Slicer' pad mode is replaced with a mode to control Stems (mute, volume, and quick effects).
+
+-  **Use transport pads to control stem effects in Stem Control mode** When enabled, transport pads (CUE, START, BACK, FWD) will function as stem effects 1-4 when the pad mode is set to 'Stems'.
+
+-  **Control stem effects with EQ knobs** When enabled, the EQ knobs of decks 3 and 4 control stem effects of decks 1 and 2.
+
+-  **Select the mode for EQ knobs** Select whether the EQ knobs should work normally or assign extended stem control behaviour to them.
+
+
 
 ## Mapping
 
@@ -128,8 +151,6 @@ Moving towards the " + " will speed the music up, while moving towards the "–"
 **NOTE:** You can reverse the slider direction by deactivating the `Down increases speed` option in Mixxx Deck preferences.
 **SHIFT + Pitch Fader** changes the pitch range of the deck between 4% to 90%.
 
-
-
 25. **Pitch Bend Down:** Press and hold to momentarily reduce the speed of the track.
 **SHIFT + Pitch Bend Down:** Adjust the key of the playing track down.
 **Pitch Bend Up + Pitch Bend Down:** Toggle keylock.
@@ -189,16 +210,14 @@ Turn left to increase the Low frequency tone, or turn right to increase the High
 
 (performance-pads)=
 
-## Performance Pads:
+## Performance Pads
 
-
-The top row of pads 31-34 controls hotcues, loops, stems and samples function of the performance pads below.
-To select a mode, just press one of these upper pads.
-An LED under the pad section indicates the currently selected mode.
+The top row of pads 31-34 controls the performance pads below.
+To activate a mode, just press one of these four upper pads.
+To activate extended functions labeled below the pads, activate them while holding SHIFT.
 See the subsections below for details about each mode.
 
 ### Cue Mode
-
 
 Press the **CUE** pad (31) to enter the cue mode.
 By pressing a pad from the upper row of performance pads, you assign a hotcue 1-4 at the current play position of the track.
@@ -208,8 +227,8 @@ To erase a hotcue, press SHIFT + pad related to that hotcue.
 
 **TIP:** If you enable the 'Add hotcues 5-8 to the second row of pads' option in the controller's preferences, you add another row of hotcues 5-8.
 
-### Auto Loop Mode
 
+### Auto Loop Mode
 
 Press the **AUTO LOOP** pad (32) to enter the auto loop mode.
 It assigns the upper 4 performance pads to the following functions:
@@ -221,14 +240,14 @@ It assigns the upper 4 performance pads to the following functions:
 
 **TIP:** You can also control loop s with the 'Loop On/Off', 'Loop 1/2' and 'Loop x2' buttons (35-37).
 
-### Fader Cuts Mode
 
+### Fader Cuts Mode
 
 Press the **FADER CUTS** pad (33) to enter the fader cuts mode.
 In Fader Cuts mode, the pads will mute and unmute the deck’s audio signal in a way that emulates crossfader movements toward that deck.
 
-### Stems Mode
 
+### Stems Mode
 
 *Stems* control separated drum (pad 1), bass (pad 2), melody (pad3) and voice (pad 4) streams of a track.
 To activated stem control mode, activate the 'Control stems with Fader Cuts pads' option in the Mixxx preferences of your controller.
@@ -240,8 +259,8 @@ Because stems replace Fader Cuts functionality, press the **FADER CUTS** pad (33
 -  **Set a stem's effect volume** by holding a stem effect pad (5-8) while rotating the BEATS knob (15) left or right.
 -  **Seelct an effect for a stem** by pressing SHIFT while holding a stem effect pad (5-8) while rotating the BEATS knob (15) left or right
 
-### Sampler Mode
 
+### Sampler Mode
 
 Press the **SAMPLE** pad (34) to enter the sampler mode.
 A press of any of the sample buttons 1-4 will load and start playing a sample if the sampler is not loaded.
@@ -253,8 +272,18 @@ Use **SHIFT + Cue Gain** (12) to adjust the volume of the sampler. When switchin
 **Note:** The sampler pads on both the left and right decks control the same sampler slots in Mixxx.
 This is a hardware limitation, as the controller sends identical MIDI signals from both sides, preventing Mixxx from distinguishing between them.
 
-(eq-knobs)=
+### Auto Loop Beat Jump
 
+When the 'Control beat jump with Auto Loop second row pads' option is enabled in the controller preferences, the bottom row of transport pads (CUE, START, BACK, FWD) control beat jump functions while in Auto Loop mode:
+
+- **CUE:** Jumps backward by the current beatjump size.
+- **START:** Halves the current beatjump size.
+- **BACK:** Doubles the current beatjump size.
+- **FWD:** Jumps forward by the current beatjump size.
+
+Holding SHIFT and pressing one of these pads will jump by a custom number of beats, which can be set in the controller preferences for each pad.
+
+(eq-knobs)=
 ## Equalizer (EQ) Knobs
 
 In the controller settings window, you can choose the functionality of the EQ knobs.
@@ -285,10 +314,9 @@ Select one of the available modes:
     Provides predictable, centered blending with smooth transitions, making it ideal for controlled, balanced mixing without abrupt changes.
     This mode is balanced - the stem whose EQ knob is most to the right has maximum volume gain to maintain overall track volume.
 
+
 (jog-wheel-display)=
-
 ## Jog Wheel display
-
 
 The Jog wheel of Numark NS4FX include a color LED display with useful information about the loaded / playing track.
 
