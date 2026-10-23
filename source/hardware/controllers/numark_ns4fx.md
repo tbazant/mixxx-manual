@@ -52,6 +52,7 @@ You can set configuration options in the Mixxx controller preferences.
 ### Loop Rolls
 
 -  **Longest roll duration (Pad 4)** Specify the longest loop roll duration assigned to Pad 4. Preceding pads halve the duration (Pad 3 = 1/2, Pad 2 = 1/4, Pad 1 = 1/8 of Pad 4).
+-  **Use transport pads for ping-pong rolls in Loop Roll mode** When enabled, transport pads (5-8) function as pads 1-4 in Loop Roll mode, matching the durations of pads 1-4 with ping-pong stereo panning (odd loop = Left, even loop = Right).
 
 ### Stem Control Options
 
@@ -287,6 +288,7 @@ Use **SHIFT + AUTO LOOP** pad (32) to enter the **Loop Roll** mode.
 Holding a performance pad 1-4 sets a loop and activates the slip mode.
 After the pad is released, the track's play head continues from the position where it would be if no loop was activated.
 You can specify the length of the loop for pad 4 (in beats) by the **Longest roll duration (Pad 4)** option. The preceeding pads (3-1) halve the duration.
+If you enable **Use transport pads for ping-pong rolls in Loop Roll mode**, then transport pads 5-8 function as pads 1-4 in Loop Roll mode, matching the durations of pads 1-4 with ping-pong stereo panning (odd loop = Left, even loop = Right).
 
 
 ### Scratching Library Mode
